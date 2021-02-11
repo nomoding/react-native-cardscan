@@ -16,6 +16,7 @@ import com.facebook.react.bridge.WritableNativeMap;
 import com.getbouncer.cardscan.ui.CardScanActivity;
 import com.getbouncer.cardscan.ui.CardScanActivityResult;
 import com.getbouncer.cardscan.ui.CardScanActivityResultHandler;
+import com.getbouncer.scan.framework.Config;
 
 public class RNCardscanModule extends ReactContextBaseJavaModule {
     private static final int SCAN_REQUEST_CODE = 51234;
@@ -31,6 +32,7 @@ public class RNCardscanModule extends ReactContextBaseJavaModule {
 
     @Override
     public void initialize() {
+        Config.setDisplayLogo(false);
         CardScanActivity.warmUp(this.reactContext.getApplicationContext(), apiKey, true);
     }
 
